@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^resource/(.*)$ resource/$1 [L]
+RewriteRule ^([^.]+)/([0-9]+)(/?)$ index.php?route=$1&id=$2 [L]
+RewriteRule ^([^.]+)/([0-9]+)/([^.]+)(/?)$ index.php?route=$1&id=$2&action=$3 [L]
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
